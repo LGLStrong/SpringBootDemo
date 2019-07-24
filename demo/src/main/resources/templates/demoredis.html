@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Redis Demo</title>
+</head>
+<body>
+	<h1 th:text="${teststr}"></h1>
+	<h1 th:text="${expire}"></h1>
+	<!--/*/ <th:block th:if="${product} != null "> /*/-->
+		<div th:object="${product}">
+			<p th:text="*{id}" />
+			<p th:text="*{name}" />
+		</div>
+	<!--/*/ </th:block> /*/-->
+</body>
+</html>

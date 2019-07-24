@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Internationalization</title>
+</head>
+<body>
+	<h1 th:text="#{welcome.text}"></h1>
+	<h1 th:text="${user}?:'(default Value)'"></h1>
+	<!--       <h1 th:text = "${user.getDm()}"></h1>
+ -->
+	<table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>bz</th>
+      </tr>
+      <tr th:each="user,status : ${users}">
+        <td th:text="${user.dm}"></td>
+        <td th:text="${user.mc}"></td>
+        <td th:text="|${status.index},${status.count},${user.bz}|"></td>
+      </tr>
+    </table>
+</body>
+
+</html>
